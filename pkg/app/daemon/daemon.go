@@ -1,5 +1,5 @@
 package daemon
-
+//inport a few packages
 import (
 	"encoding/json"
 	"fmt"
@@ -72,7 +72,7 @@ func Handle(common *common.Common) {
 	instruction := getInstruction()
 
 	if err := instruction.run(common); err != nil {
-		log.Fatal(err)
+		log.Fatal(err.message)
 	}
 
 	os.Exit(0)
